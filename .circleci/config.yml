@@ -9,16 +9,18 @@ jobs:
       - image: circleci/node:8.10
     steps:
       - checkout
-      - run: console.log( "A first hello")
+      - run: echo "A first hello"
+      - run: sleep 25
   three:
     docker:
       - image: circleci/node:8.10
     steps:
       - checkout
-      - run: console.log( "A more familiar hi")
+      - run: echo "A more familiar hi"
+      - run: sleep 15
 workflows:
   version: 2
-  one_and_two:
+  one_and_three:
     jobs:
       - one
       - three
